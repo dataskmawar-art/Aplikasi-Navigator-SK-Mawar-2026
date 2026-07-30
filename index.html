@@ -1,71 +1,205 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Navigator SK Mawar</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
+<div class="background"></div>
 
 <div class="container">
 
+    <!-- ================= HEADER ================= -->
+
     <header>
 
-        <img src="https://via.placeholder.com/140x140.png?text=LOGO" class="logo">
+        <img src="logo.png" alt="Logo SK Mawar" class="logo">
 
         <h1>🌸 Navigator SK Mawar 🌸</h1>
 
         <p>
-            Selamat Datang.<br>
-            Sila pilih destinasi anda.
+            Sistem Panduan Lokasi<br>
+            Sekolah Kebangsaan Mawar
         </p>
 
     </header>
 
-    <div class="menu">
+    <!-- ================= SEARCH ================= -->
 
-        <button class="btn" onclick="showRoute('Pejabat')">
-            🏢 Pejabat
-        </button>
+    <section class="search-box">
 
-        <button class="btn" onclick="showRoute('Bilik Guru')">
-            👩‍🏫 Bilik Guru
-        </button>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cari lokasi..."
+            onkeyup="searchLocation()">
 
-        <button class="btn" onclick="showRoute('Kantin')">
-            🍔 Kantin
-        </button>
+    </section>
 
-        <button class="btn" onclick="showRoute('Surau')">
-            🕌 Surau
-        </button>
+    <!-- ================= MENU ================= -->
 
-        <button class="btn" onclick="showRoute('Perpustakaan')">
-            📚 Perpustakaan
-        </button>
+    <section id="menu">
 
-        <button class="btn" onclick="showRoute('Makmal Komputer')">
-            💻 Makmal Komputer
-        </button>
+        <!-- Tingkat Bawah -->
 
-        <button class="btn" onclick="showRoute('Dewan')">
-            🏫 Dewan
-        </button>
+        <div class="category">
 
-        <button class="btn" onclick="showRoute('Padang')">
-            ⚽ Padang
-        </button>
+            <h2>🏡 Tingkat Bawah</h2>
 
-    </div>
+            <button onclick="showMap('lantai_bawah_surau.png','🕌 Surau')">
+                🕌 Surau
+            </button>
 
-    <div id="result" class="result">
+            <button onclick="showMap('lantai_bawah_bilik_kesihatan.png','🩺 Bilik Kesihatan')">
+                🩺 Bilik Kesihatan
+            </button>
 
-        👋 Pilih destinasi di atas.
+            <button onclick="showMap('lantai_bawah_bilik_sains.png','🧪 Bilik Sains')">
+                🧪 Bilik Sains
+            </button>
 
-    </div>
+            <button onclick="showMap('lantai_bawah_bilik_spbt.png','📚 Bilik SPBT')">
+                📚 Bilik SPBT
+            </button>
+
+            <button onclick="showMap('lantai_bawah_kelas_6_pintar.png','🎓 Kelas 6 Pintar')">
+                🎓 Kelas 6 Pintar
+            </button>
+
+        </div>
+
+
+
+        <!-- Tingkat 1 -->
+
+        <div class="category">
+
+            <h2>🏢 Tingkat 1</h2>
+
+            <button onclick="showMap('lantai1_pejabat.png','🏢 Pejabat')">
+                🏢 Pejabat
+            </button>
+
+            <button onclick="showMap('lantai1_bilik_ict.png','💻 Bilik ICT')">
+                💻 Bilik ICT
+            </button>
+
+            <button onclick="showMap('lantai1_bilik_mesyuarat.png','👥 Bilik Mesyuarat')">
+                👥 Bilik Mesyuarat
+            </button>
+
+            <button onclick="showMap('lantai1_bilik_pemulihan.png','❤️ Bilik Pemulihan')">
+                ❤️ Bilik Pemulihan
+            </button>
+
+            <button onclick="showMap('lantai1_kelas_1_genius.png','📘 Kelas 1 Genius')">
+                📘 Kelas 1 Genius
+            </button>
+
+            <button onclick="showMap('lantai1_kelas_1_intelek.png','📗 Kelas 1 Intelek')">
+                📗 Kelas 1 Intelek
+            </button>
+
+            <button onclick="showMap('lantai1_kelas_1_pintar.png','📕 Kelas 1 Pintar')">
+                📕 Kelas 1 Pintar
+            </button>
+
+            <button onclick="showMap('lantai1_kelas-3_intelek.png','📘 Kelas 3 Intelek')">
+                📘 Kelas 3 Intelek
+            </button>
+
+        </div>
+
+
+
+        <!-- Tingkat 2 -->
+
+        <div class="category">
+
+            <h2>🏫 Tingkat 2</h2>
+
+            <button onclick="showMap('lantai2_bilik_guru.png','👩‍🏫 Bilik Guru')">
+                👩‍🏫 Bilik Guru
+            </button>
+
+            <button onclick="showMap('lantai2_kelas_tahun_2.png','📘 Tahun 2')">
+                📘 Tahun 2
+            </button>
+
+            <button onclick="showMap('lantai2_kelas_tahun_3_genius.png','📙 Tahun 3 Genius')">
+                📙 Tahun 3 Genius
+            </button>
+
+            <button onclick="showMap('lantai2_kelas_tahun_4.png','📗 Tahun 4')">
+                📗 Tahun 4
+            </button>
+
+            <button onclick="showMap('lantai2_kelas_tahun_5.png','📕 Tahun 5')">
+                📕 Tahun 5
+            </button>
+
+        </div>
+
+
+
+        <!-- Tingkat 3 -->
+
+        <div class="category">
+
+            <h2>📚 Tingkat 3</h2>
+
+            <button onclick="showMap('lantai3_pusat_sumber.png','📚 Pusat Sumber')">
+                📚 Pusat Sumber
+            </button>
+
+            <button onclick="showMap('lantai3_tahun_6.png','🎓 Tahun 6')">
+                🎓 Tahun 6
+            </button>
+
+        </div>
+
+
+
+        <!-- Kemudahan -->
+
+        <div class="category">
+
+            <h2>🍔 Kemudahan</h2>
+
+            <button onclick="showMap('kantin.png','🍔 Kantin')">
+                🍔 Kantin
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PAPARAN PETA ================= -->
+
+    <section id="viewer" class="viewer">
+
+        <h2 id="locationTitle">
+
+            📍 Pilih lokasi
+
+        </h2>
+
+        <img
+            id="mapImage"
+            src=""
+            alt="Peta Lokasi">
+
+    </section>
 
 </div>
 
